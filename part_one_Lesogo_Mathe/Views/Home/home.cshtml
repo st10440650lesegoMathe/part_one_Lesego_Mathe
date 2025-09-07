@@ -1,0 +1,62 @@
+﻿@Html.Partial("_menu")
+
+<style>
+    html, body {
+        height: auto;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        padding-top: 70px;
+        background: radial-gradient(1200px 600px at 10% 10%, #0f172a 0%, transparent 20%), linear-gradient(135deg, #0b1220 0%, #071225 100%);
+        color: var(--accent);
+    }
+</style>
+
+
+
+<div class="home_container">
+    <div style="height:1rem"></div>
+
+    <div class="home_card">
+        <h1 class="home_title">Welcome to the Monthly Claim System</h1>
+        <p class="home_text">
+            This system helps lecturers submit monthly claims with supporting documents and track them after submission.
+            Structured forms, mandatory uploads, and input validation ensure accuracy, consistency, and reliability.
+        </p>
+        <p class="home_text">
+            Submitted claims are first reviewed by the <strong>Program Coordinator</strong> for pre-approval,
+            then finalized by the <strong>Program Manager</strong> who approves or rejects them. All users register and log in according to their roles.
+        </p>
+
+        <div class="home_roles">
+            <div class="role_card">
+                <div class="role_title">Lecturers</div>
+                <p  class="home_text" style="text-align:start;margin-left:0;width:100%">Submit claims with accurate documentation and complete all required fields.</p>
+                <a href=@Url.Action("Claim","Home") class="cta_button">Claim</a>
+                <a href=@Url.Action("track", "Home") class="cta_button">Track Claim</a>
+
+            </div>
+            <div class="role_card">
+                <div class="role_title">Program Coordinator</div>
+                <p class="home_text" style="text-align:start;margin-left:0;width:100%">Review and pre-approve submitted claims.</p>
+                <a href=@Url.Action("Pre_approve", "Home") class="cta_button">Pre-Approve</a>
+
+            </div>
+            <div class="role_card">
+                <div class="role_title">Program Manager</div>
+                <p class="home_text" style="text-align:start;margin-left:0;width:100%">Finalize claims by approving or rejecting them.</p>
+                <a href=@Url.Action("Approve", "Home") class="cta_button">Approve</a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>    
+

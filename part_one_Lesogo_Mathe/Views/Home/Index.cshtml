@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/site.css" />
+<style>
+    
+</style>
+<body>
+    <div class="blob a" aria-hidden="true"></div>
+    <div class="blob b" aria-hidden="true"></div>
+
+
+    <main class="glass-card" role="main" aria-labelledby="loginTitle">
+        <h1 id="loginTitle" class="title">Welcome back</h1>
+        <p class="subtitle">Sign in with your email and role to continue</p>
+
+
+        <form id="loginForm" action="/Home/home" method="post" autocomplete="on">
+            <div class="field">
+                <label for="email">Email (username)</label>
+                <input id="email" name="email" type="email" placeholder="your email"  />
+            </div>
+
+
+            <div class="field">
+                <label for="password">Password</label>
+                <div class="password-row">
+                    <input id="password" name="password" type="password" minlength="6" placeholder="Your password"  />
+                    <button type="button" class="toggle-btn" onclick="togglePassword()" id="pwToggle" aria-pressed="false">Show</button>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="role">Role</label>
+                <select id="role" name="role">
+                    <option style="color:#555" value="lecturer">Lecturer</option>
+                    <option style="color:#555" value="pc">Program Coordinator</option>
+                    <option style="color:#555" value="pm">Program Manager</option>
+                </select>
+            </div>
+
+
+
+            <div class="actions">
+                <button type="submit">Sign in</button>
+                <div class="meta">
+                    <span></span>
+                    <a  style="color:rgba(255,255,255,0.9);text-decoration:underline;font-size:13px">Forgot password?</a>
+                </div>
+            </div>
+
+
+            <p class="register">Don't have an account? <a href="/Home/register">Register</a></p>
+        </form>
+    </main>
+
+
+    <script>
+         function togglePassword() {
+          const pass = document.getElementById('password');
+          const btn = event.target;
+          if (pass.type === "password") {
+            pass.type = "text";
+            btn.textContent = "Hide";
+          } else {
+            pass.type = "password";
+            btn.textContent = "Show";
+          }
+        }
+    </script>
+</body>

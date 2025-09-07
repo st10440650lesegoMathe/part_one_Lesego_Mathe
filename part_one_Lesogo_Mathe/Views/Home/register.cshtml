@@ -1,0 +1,68 @@
+﻿<link rel="stylesheet" href="~/css/site.css" />
+
+<body>
+    <!-- Decorative blobs -->
+    <div class="blob a"></div>
+    <div class="blob b"></div>
+
+    <!-- Glass card -->
+    <div class="glass-card">
+        <h1 class="title">Create Account</h1>
+        <p class="subtitle">Fill in your details to register</p>
+
+        <form action="/Home/Index" method="POST">
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" maxlength="50" >
+            </div>
+
+            <div class="field">
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" name="surname" maxlength="50" >
+            </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" maxlength="100" >
+            </div>
+
+            <div class="field">
+                <label for="role">Role</label>
+                <select style="color:#555" id="role" name="role" >
+                    <option value="lecturer">Lecturer</option>
+                    <option value="pc">Program Coordinator</option>
+                    <option value="pm">Program Manager</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <div class="password-row">
+                    <input type="password" id="password" name="password" minlength="6" >
+                    <button type="button" class="toggle-btn" onclick="togglePassword()">Show</button>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+
+        <p class="register">Already have an account? <a href="/Home/Index">Login</a></p>
+    </div>
+
+    <script>
+        function togglePassword() {
+          const pass = document.getElementById('password');
+          const btn = event.target;
+          if (pass.type === "password") {
+            pass.type = "text";
+            btn.textContent = "Hide";
+          } else {
+            pass.type = "password";
+            btn.textContent = "Show";
+          }
+        }
+    </script>
+</body>
+</html>

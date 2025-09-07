@@ -1,0 +1,60 @@
+﻿@Html.Partial("_menu")
+
+<div class="claim_container" style="width:100vw; min-height:100vh; display:flex; justify-content:center; align-items:center; padding:20px;">
+    <div class="claim_card" style="width:90%; height:100%; overflow-y:auto; padding:30px;">
+        <h1 class="claim_title"><i class="fa fa-file-alt"></i> Submit Claim</h1>
+
+        <form class="claim_form" action="/submit-claim" method="POST" enctype="multipart/form-data">
+
+            <div class="claim_row">
+                <div class="claim_field">
+                    <label for="users_id">Facult name</label>
+                    <input type="text" id="users_id" name="name" required>
+                </div>
+                <div class="claim_field">
+                    <label for="namemodule">Module Name</label>
+                    <input type="text" id="namemodule" name="namemodule" required>
+                </div>
+            </div>
+
+            <div class="claim_row">
+                <div class="claim_field">
+                    <label for="sessions">Sessions</label>
+                    <input type="text" id="sessions" name="sessions" maxlength="50" required>
+                </div>
+                <div class="claim_field">
+                    <label for="hours">Hours</label>
+                    <input type="time" id="hours" name="hours" required>
+                </div>
+            </div>
+
+            <div class="claim_row">
+                <div class="claim_field">
+                    <label for="rate">Rate</label>
+                    <input type="number" id="rate" name="rate" max="500" required>
+                </div>
+                <div class="claim_field">
+                    <label for="total_amount">Total Amount</label>
+                    <input type="text" id="total_amount" name="total_amount" maxlength="250" required>
+                </div>
+            </div>
+
+       
+       
+
+
+            <div class="claim_row">
+               
+                <div class="claim_field">
+                    <label for="document_path">Upload Document</label>
+                    <input type="file" id="document_path" name="document_path" accept=".pdf,.doc,.docx" required>
+                </div>
+            </div>
+
+            <div class="claim_actions">
+                <button type="submit"><i class="fa fa-paper-plane"></i> Submit Claim</button>
+            </div>
+
+        </form>
+    </div>
+</div>
